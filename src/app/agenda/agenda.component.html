@@ -1,0 +1,131 @@
+<section class="container">
+  <h2 class="title">Sua Agenda</h2>
+  <form
+    class="example-form"
+    (ngSubmit)="scheduleAppointment()"
+    #appointmentForm="ngForm"
+  >
+    <h3 class="stitle">Marque um atendimento</h3>
+    <mat-form-field class="example-full-width">
+      <mat-label for="name">Nome</mat-label>
+      <input
+        matInput
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="appointmentData.name"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Veterinários</mat-label>
+      <mat-select
+        [(ngModel)]="appointmentData.veterinario"
+        id="veterinario"
+        name="veterinario"
+        required
+      >
+        <mat-option
+          *ngFor="let veterinario of veterinarios"
+          [value]="veterinario.name"
+        >
+          {{ veterinario.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Tipo de Atendimento</mat-label>
+      <mat-select
+        [(ngModel)]="appointmentData.type"
+        name="type"
+        id="type"
+        required
+      >
+        <mat-option *ngFor="let tipo of tiposAtendimento" [value]="tipo">
+          {{ tipo }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label for="date">Data</mat-label>
+      <input
+        matInput
+        type="date"
+        id="date"
+        name="date"
+        [(ngModel)]="appointmentData.date"
+        required
+      />
+      <mat-icon matSuffix fontIcon="calendar"></mat-icon>
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+      <mat-label for="time">Horário Preferencial</mat-label>
+      <input
+        matInput
+        type="time"
+        id="time"
+        name="time"
+        [(ngModel)]="appointmentData.time"
+        required
+      />
+    </mat-form-field>
+    <button class="btnAgenda" mat-raised-button color="accent" type="submit">
+      {{ isUpdating ? "Atualizar" : "Agendar Atendimento" }}
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      (click)="clearForm()"
+    >
+      Limpar
+    </button>
+  </form>
+
+  
+  <ng-container *ngIf="appointments.length; else noAppointments">
+    <h3 class="stitle">Lista de Agendamentos</h3>
+    <table mat-table [dataSource]="appointments" class="mat-elevation-z8 tableAgendamento">
+  
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="veterinario">
+        <th mat-header-cell *matHeaderCellDef>Veterinario</th>
+        <td mat-cell *matCellDef="let element">{{ element.veterinario }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef>Tipo de Atendimento</th>
+        <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Data</th>
+        <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef>Horario</th>
+        <td mat-cell *matCellDef="let element">{{ element.time }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Ações</th>
+          <td mat-cell *matCellDef="let element; let i = index">
+            <button class="btnAgenda" mat-raised-button color="warn" (click)="cancelAppointment(i)">Cancelar</button>
+            <button mat-raised-button color="accent" (click)="updateAppointment(i)">Atualizar</button>
+          </td>
+        </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </ng-container>
+  <ng-template #noAppointments>
+    <h3 class="stitle">Nenhum agendamento marcado.</h3>
+  </ng-template>
+</section>

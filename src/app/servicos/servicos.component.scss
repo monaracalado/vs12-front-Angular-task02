@@ -1,0 +1,46 @@
+.content {
+    width: 80%;
+    margin: auto;
+    min-height: 75vh;
+  }
+
+  .divServicos{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.example-card{
+    width: 30%;
+    min-width: 12.5rem;
+}
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #FF4081;
+    padding-top: 2%;
+  }
+  
+  .stitle {
+      font-size: 22px;
+      font-weight: 500;
+      color: #808080;
+      padding-bottom: 3%;
+    }
+    
+    .paragraph {
+    font-weight: 500;
+    color:  #df205f;
+    font-size: 18px;
+    text-align: justify;
+    padding-bottom: 3%;
+  }
+
+  .text{
+    font-weight: 500;
+    color: #5c5b5b;
+    font-size: 18px;
+    text-align: justify;
+    margin-top: 1.5rem;
+  }
