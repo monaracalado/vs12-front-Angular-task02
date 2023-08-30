@@ -1,0 +1,50 @@
+.content {
+  width: 80%;
+  margin: auto;
+  min-height: 75vh;
+}
+
+.divHome {
+  display: flex;
+  padding-bottom: 3%;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff4081;
+  padding-top: 3%;
+  padding-bottom: 2%;
+}
+
+.stitle {
+  font-size: 22px;
+  font-weight: 500;
+  color: #808080;
+  padding-bottom: 4%;
+}
+
+.paragraph {
+  font-weight: 500;
+  color: #5c5b5b;
+  font-size: 18px;
+  text-align: justify;
+}
+
+.imgCat {
+  float: left;
+  margin-right: 3%;
+  width: 30%;
+  border-radius: 20px;
+  width: 200px;
+  height: 130px;
+}
+
+.imgCatR {
+  float: right;
+  margin-left: 3%;
+  width: 30%;
+  border-radius: 20px;
+  width: 200px;
+  height: 130px;
+}

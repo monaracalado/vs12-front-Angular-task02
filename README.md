@@ -1,6 +1,6 @@
 # CatsLove
-
-![foto1](./src/assets/cats.png)
+Continuação de aplicação inicializada em aula
+![foto1](./src/assets/aplicacao.png)
 
 ## Projeto com as tecnologias
 - Angular

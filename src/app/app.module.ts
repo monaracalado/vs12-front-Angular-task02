@@ -19,6 +19,12 @@ import { VeterinariosComponent } from './veterinarios/veterinarios.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ContatoComponent } from './contato/contato.component';
 import { LoginComponent } from './login/login.component';
+import { AgendaComponent } from './agenda/agenda.component';
+import {MatSelectModule} from '@angular/material/select';
+import { ServicosComponent } from './servicos/servicos.component';
+import {MatCardModule} from '@angular/material/card';
+
+
 
 @NgModule({
   declarations: [
@@ -28,7 +34,9 @@ import { LoginComponent } from './login/login.component';
     VeterinariosComponent,
     NotFoundComponent,
     ContatoComponent,
-    LoginComponent
+    LoginComponent,
+    AgendaComponent,
+    ServicosComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +50,9 @@ import { LoginComponent } from './login/login.component';
     MatTableModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

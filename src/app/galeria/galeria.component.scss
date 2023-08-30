@@ -1,7 +1,7 @@
 .content {
   width: 80%;
   margin: auto;
-  text-align: center;
+  min-height: 75vh;
 }
 
 .img-container {
@@ -11,4 +11,12 @@
 .cat-img{
   width: 18.75rem ;
   border-radius: 1rem;
+  border: #FF4081 1px solid;  
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #FF4081;
+  padding-top: 2%;
 }
